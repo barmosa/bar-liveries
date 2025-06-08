@@ -3,7 +3,7 @@ game 'gta5'
 
 lua54 'yes'
 
-author 'Your Name'
+author 'barScripts'
 description 'Vehicle Liveries UI'
 version '1.0.0'
 
