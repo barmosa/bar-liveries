@@ -1,6 +1,7 @@
 Config = {}
 
-Config.UseBucket = true -- Set to false to disable bucket system
+Config.Debug = true -- Set to true to enable debug prints
+Config.UseBucket = false -- Set to false to disable bucket system
 
 Config.Locations = {
     MenuTrigger = vector4(450.76113, -975.6517, 25.699987, 88.876113), -- Where you need to be to see the prompt
