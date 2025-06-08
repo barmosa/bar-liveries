@@ -54,8 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const checkbox = e.target.closest('input[type="checkbox"]');
         if (checkbox && checkbox.closest('.switch') && !isUpdating) {
             const extraId = parseInt(checkbox.dataset.extraId);
-            console.log('Checkbox changed for Extra:', extraId);
-            console.log('New checkbox state:', checkbox.checked);
             
             fetch(`https://${GetParentResourceName()}/toggleExtra`, {
                 method: 'POST',
@@ -100,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (item.type === "update") {
-            console.log('Received update:', item);
             
             liveriesContent.innerHTML = item.liveries.map((livery, index) => `
                 <div class="option">
@@ -112,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
             isUpdating = true;
             extrasContent.innerHTML = item.extras.map(extra => {
                 const isEnabled = extra.enabled === 1 || extra.enabled === true;
-                console.log('Setting extra', extra.id, 'to', isEnabled, '(original value:', extra.enabled, ')');
                 return `
                     <div class="option" data-extra-id="${extra.id}">
                         <label class="switch">

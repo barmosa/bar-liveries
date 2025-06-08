@@ -140,7 +140,7 @@ CreateThread(function()
                     if vehicle ~= 0 and GetPedInVehicleSeat(vehicle, -1) == ped then
                         local pos = Config.Locations.VehiclePosition
                         SetEntityCoords(vehicle, pos.x, pos.y, pos.z, false, false, false, true)
-                        SetEntityHeading(pos.w)
+                        SetEntityHeading(vehicle, pos.w)
                         OpenLiveriesMenu()
                     else
                         QBCore.Functions.Notify("You must be in a vehicle and be the driver", "error")
