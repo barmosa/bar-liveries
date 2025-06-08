@@ -9,6 +9,13 @@ local function SetDisplay(bool)
         type = "ui",
         status = display
     })
+    
+    if Config.UseBucket then
+        local bucketId = bool and GetPlayerServerId(PlayerId()) or 0
+        local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+        local vehicleNetId = vehicle ~= 0 and NetworkGetNetworkIdFromEntity(vehicle) or nil
+        TriggerServerEvent('bar-liveries:setBucket', bucketId, vehicleNetId)
+    end
 end
 
 local function OpenLiveriesMenu()
