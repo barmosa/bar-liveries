@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Exo', sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#container {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    display: none;
+}
+
+.vehicle-setup {
+    width: 280px;
+    background-color: rgba(22, 22, 22, 0.95);
+    border-radius: 12px;
+    color: white;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    animation: slideFromLeft 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: left center;
+    display: none;
+}
+
+.header {
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(22, 22, 22, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(22, 22, 22, 0.95);
+    padding: 0 8px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px 12px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    position: relative;
+    font-size: 13px;
+    transition: all 0.2s ease;
+    letter-spacing: 0.2px;
+    font-weight: 500;
+}
+
+.tab-btn:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.tab-btn.active {
+    color: #0066FF;
+    font-weight: 500;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0066FF;
+    box-shadow: 0 0 8px rgba(0, 102, 255, 0.5);
+}
+
+:root {
+    --Color: #0066FF;
+}
+
+.tab-content {
+    padding: 4px 0;
+    max-height: 204px;
+    overflow-y: auto;
+}
+
+.tab-content.hidden {
+    display: none;
+}
+
+.option {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.65);
+    transition: all 0.2s ease;
+    font-size: 13px;
+    height: 40px;
+    box-sizing: border-box;
+    font-weight: 400;
+}
+
+.option:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+}
+
+input[type="radio"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #666;
+    border-radius: 50%;
+    margin-right: 8px;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    border-color: #007BFF;
+}
+
+input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #0066FF;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #333;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #0066FF;
+}
+
+input:checked + .slider:before {
+    transform: translateX(16px);
+}
+
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--Color);
+    border-radius: 10px;
+    height: 5px;
+}
+
+.tab-content {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideFromLeft {
+    from { 
+        opacity: 0; 
+        transform: translateX(-40px); 
+        filter: blur(10px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes slideFromRight {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}

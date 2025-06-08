@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Setup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <div class="vehicle-setup">
+        <div class="header">
+            <div class="title">
+                <span class="icon">🔧</span>
+                <span id="headerTitle">Vehicle Liveries</span>
+            </div>
+            <button class="close-btn">×</button>
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="liveries">Liveries</button>
+            <button class="tab-btn" data-tab="extras">Extras</button>
+        </div>
+
+        <div class="tab-content" id="liveries-content">
+            <div class="option"><input type="radio" name="livery" id="none"><label for="none">None</label></div>
+            <div class="option"><input type="radio" name="livery" id="livery1"><label for="livery1">Livery 1</label></div>
+            <div class="option"><input type="radio" name="livery" id="livery2"><label for="livery2">Livery 2</label></div>
+            <div class="option"><input type="radio" name="livery" id="livery3"><label for="livery3">Livery 3</label></div>
+            <div class="option"><input type="radio" name="livery" id="livery4" checked><label for="livery4">Livery 4</label></div>
+            <div class="option"><input type="radio" name="livery" id="livery5"><label for="livery5">Livery 5</label></div>
+            <div class="option"><input type="radio" name="livery" id="livery6"><label for="livery6">Livery 6</label></div>
+        </div>
+
+        <div class="tab-content hidden" id="extras-content">
+            <div class="option">
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+                <span>Extra 1</span>
+            </div>
+            <div class="option">
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+                <span>Extra 2</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
